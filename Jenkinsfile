@@ -19,7 +19,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Simulating deployment to PayFlow staging server...'
+                echo 'Deploying PayFlow landing page to staging...'
+                sh 'cp index.html /var/payflow-deploy/index.html'
+                echo 'Deployment complete. View it at http://localhost:8081'
             }
         }
     }
